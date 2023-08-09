@@ -18,6 +18,7 @@ import {
   InputLabel,
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
+import { Link } from "react-router-dom";
 const MultiSelectInput = () => {
   const [companyName, setCompanyName] = useState("");
   const [industries, setIndustries] = useState("");
@@ -402,9 +403,9 @@ const MultiSelectInput = () => {
       setFundingRound(fundingRoundValue);
       setShowList(false);
     }
-  
+
     // Add other functionalities for different inputs if needed
-  
+
     // Clear selected input
     setSelectedInput(null);
   };
@@ -422,7 +423,7 @@ const MultiSelectInput = () => {
     if (selectedInput === "financials") {
       setFinancials("Custom");
       console.log("Selected Financials:", updatedFinancialsData);
-      setShowList(false)
+      setShowList(false);
     }
   };
 
@@ -571,17 +572,20 @@ const MultiSelectInput = () => {
           />
         </Box>
         <Box>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#969899",
-              width: "160px",
-              textTransform: "capitalize",
-            }}
-            onClick={handleSearch}
-          >
-            Search
-          </Button>
+          {" "}
+          <Link to="/related">
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#969899",
+                width: "160px",
+                textTransform: "capitalize",
+              }}
+              onClick={handleSearch}
+            >
+              Search
+            </Button>
+          </Link>
         </Box>
       </Box>
 

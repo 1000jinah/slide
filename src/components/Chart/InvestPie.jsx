@@ -27,7 +27,9 @@ const PieChart = ({ data }) => {
           },
         },
         elements: {
+         
           arc: {
+           
             borderWidth: 0, // Remove the border
           },
         },

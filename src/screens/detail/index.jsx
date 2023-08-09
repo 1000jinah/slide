@@ -154,6 +154,9 @@ const Detail = () => {
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
   };
+  const handleTrafficDetailCLick = () => {
+    setTabValue(1); // Tab 2로 이동
+  };
   return (
     <div>
       <Header />
@@ -836,6 +839,7 @@ const Detail = () => {
                         {/* <FormHelperText>Without label</FormHelperText> */}
                       </FormControl>
                       <Button
+                      onClick={handleTrafficDetailCLick}
                         endIcon={<AddIcon />}
                         sx={{ textTransform: "capitalize", color: "#636973" }}
                       >
@@ -1060,6 +1064,7 @@ const Detail = () => {
                       }}
                     >
                       <Button
+                        onClick={handleTrafficDetailCLick}
                         endIcon={<AddIcon />}
                         sx={{ textTransform: "capitalize", color: "#636973" }}
                       >

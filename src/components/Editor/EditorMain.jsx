@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { fabric } from "fabric";
+import jsPDF from "jspdf";
 import AddSlideButton from "components/EditorButton/AddSlideButton";
 import AddTextButton from "components/EditorButton/AddTextButton";
 import DuplicateButton from "components/EditorButton/DuplicateButton";
 import DeleteSlideButton from "components/EditorButton/DeleteSlideButton";
+import ExportPdfButton from "components/EditorButton/ExportPdfButton";
 const SlideApp = () => {
   const mainRef = useRef(null);
   const canvasRef = useRef(null);
@@ -23,7 +25,88 @@ const SlideApp = () => {
   const [fabricObjectArray, setFabricObjectArray] = useState([]);
   const [textValues, setTextValues] = useState([]);
   const [clonedTextObjects, setClonedTextObjects] = useState([]);
+  // PDF로 내보내기 기능
+  const handleExportToPDF = () => {
+    // main 컨테이너 요소 가져오기
+    const mainContainer = document.getElementById("main");
 
+    if (mainContainer) {
+      // 모든 main-container 요소 가져오기
+      const canvasContainers =
+        mainContainer.querySelectorAll(".main-container");
+
+      // 메인 캔버스 요소 가져오기
+      const mainCanvas = document.getElementById("main");
+
+      if (mainCanvas) {
+        // 메인 캔버스의 너비와 높이 가져오기
+        const mainCanvasWidth = mainCanvas.offsetWidth * 1;
+        const mainCanvasHeight = mainCanvas.offsetHeight * 1;
+
+        // PDF 인스턴스 생성
+        const pdf = new jsPDF("l", "px", [mainCanvasWidth, mainCanvasHeight]);
+
+        // 각 main-container마다 반복
+        canvasContainers.forEach((container, index) => {
+          // 해당 main-container의 canvas 요소 가져오기
+          const canvasElement = container.querySelector("canvas");
+
+          // 배경색 가져오기
+          const backgroundColor =
+            window.getComputedStyle(container).backgroundColor;
+
+          if (canvasElement) {
+            // 캔버스의 너비와 높이 설정
+            const canvasWidth = mainCanvasWidth;
+            const canvasHeight = mainCanvasHeight;
+
+            // 임시 캔버스 생성
+            const tempCanvas = document.createElement("canvas");
+            tempCanvas.width = canvasWidth;
+            tempCanvas.height = canvasHeight;
+
+            // 임시 캔버스의 2D 컨텍스트 가져오기
+            const tempCtx = tempCanvas.getContext("2d");
+
+            if (tempCtx) {
+              // 배경색이 없거나 투명한 경우, 흰색 배경으로 설정
+              if (
+                backgroundColor === "rgba(0, 0, 0, 0)" ||
+                backgroundColor === "transparent"
+              ) {
+                tempCtx.fillStyle = "#ffffff";
+                tempCtx.fillRect(0, 0, canvasWidth, canvasHeight);
+              }
+
+              // 캔버스 요소를 임시 캔버스에 그리기
+              tempCtx.drawImage(canvasElement, 0, 0);
+
+              // 임시 캔버스의 이미지 데이터 가져오기
+              const tempImageData = tempCanvas.toDataURL("image/jpeg", 1.0);
+
+              // PDF에 이미지 추가
+              pdf.addImage(
+                tempImageData,
+                "JPEG",
+                0,
+                0,
+                canvasWidth,
+                canvasHeight
+              );
+
+              // 마지막 슬라이드가 아니면 페이지 추가
+              if (index < canvasContainers.length - 1) {
+                pdf.addPage();
+              }
+            }
+          }
+        });
+
+        // PDF 저장
+        pdf.save("presentation.pdf");
+      }
+    }
+  };
   const generateColorFromId = (id) => {
     // 주어진 문자열을 기반으로 고유한 색상 생성 함수
     let hash = 0;
@@ -913,11 +996,13 @@ const SlideApp = () => {
             {selectedSlideIndex !== null && (
               <DuplicateButton onClick={duplicateSlide} />
             )}
+            
             {selectedSlideIndex !== null && (
               <DeleteSlideButton
                 onClick={() => deleteSlide(selectedSlideIndex)}
               />
             )}
+             <ExportPdfButton onClick={handleExportToPDF} />
           </div>
           <div
             style={{
