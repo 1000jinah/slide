@@ -17,7 +17,6 @@ import {
   // ListItemIcon,
   // ListItemButton,
   // ListItemText,
-
   Divider,
   // Divider,
 } from "@mui/material";
@@ -40,6 +39,7 @@ import FinanicalBox from "components/FinanicalBox";
 import ProfileBox from "components/ProfileBox";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import NewsBox from "components/NewsBox";
+import { Link } from "react-router-dom";
 const chartData = [
   {
     date: "2023.04",
@@ -201,13 +201,15 @@ const Detail = () => {
               </Box>
             </Box>
             <Box>
-              <Button
-                variant="contained"
-                sx={{ textTransform: "capitalize", mr: 2 }}
-                startIcon={<MeetingRoomIcon />}
-              >
-                Visit Apple
-              </Button>
+              <Link to="https://www.apple.com/"  target="_blank">
+                <Button
+                  variant="contained"
+                  sx={{ textTransform: "capitalize", mr: 2 }}
+                  startIcon={<MeetingRoomIcon />}
+                >
+                  Visit Apple
+                </Button>
+              </Link>
               <Button
                 variant="contained"
                 sx={{ textTransform: "capitalize" }}
@@ -839,7 +841,7 @@ const Detail = () => {
                         {/* <FormHelperText>Without label</FormHelperText> */}
                       </FormControl>
                       <Button
-                      onClick={handleTrafficDetailCLick}
+                        onClick={handleTrafficDetailCLick}
                         endIcon={<AddIcon />}
                         sx={{ textTransform: "capitalize", color: "#636973" }}
                       >
