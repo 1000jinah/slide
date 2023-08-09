@@ -56,7 +56,7 @@ function a11yProps(index) {
 const Related = () => {
   const [tabValue, setTabValue] = React.useState(0); // Tab
 
-  const [view, setView] = React.useState("list"); // Toggle
+  const [view, setView] = React.useState("square"); // Toggle
 
   const handleToggleChange = (event, nextView) => {
     setView(nextView);

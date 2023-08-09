@@ -12,6 +12,7 @@ import {
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import AboutTable from "components/Table/AboutTable";
+import { Link } from "react-router-dom";
 
 function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
@@ -135,7 +136,8 @@ function SimpleDialog(props) {
               </Box>
             </Box>
             {/* Company Details */}
-            <Button
+           <Link to="/detail">
+           <Button
               variant="contained"
               sx={{
                 backgroundColor: "#969899",
@@ -144,7 +146,7 @@ function SimpleDialog(props) {
               }}
             >
               Company Details
-            </Button>
+            </Button></Link>
           </Box>
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <Typography sx={{ color: "#636973", fontWeight: "bold" }}>
@@ -170,7 +172,7 @@ function SimpleDialog(props) {
               <AboutTable />
             </Box>
             <Box width={"50%"}>
-              <Typography sx={{ fontSize: "0.875rem", mb: 1.5 }}>
+              <Typography sx={{ fontSize: "0.875rem", mb: 1.5,  fontWeight: "bold"  }}>
                 Industries
               </Typography>
               <Stack direction="row" sx={{ flexWrap: "wrap" }}>

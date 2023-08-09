@@ -571,14 +571,14 @@ const MultiSelectInput = () => {
             onChange={(e) => handleInputChange(e, "financials")}
           />
         </Box>
-        <Box>
-          {" "}
+        <Box sx={{ marginRight: "10px" }}>
           <Link to="/related">
             <Button
               variant="contained"
               sx={{
                 backgroundColor: "#969899",
                 width: "160px",
+
                 textTransform: "capitalize",
               }}
               onClick={handleSearch}
