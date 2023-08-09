@@ -3,18 +3,17 @@ import Chart from "chart.js/auto";
 
 const LineChart = () => {
   const chartRef = useRef(null);
-  let chartInstance = null;
+  const chartInstanceRef = useRef(null); // Store the chart instance
 
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
 
-    // Destroy previous chart instance, if it exists
-    if (chartInstance) {
-      chartInstance.destroy();
+    if (chartInstanceRef.current) {
+      chartInstanceRef.current.destroy();
     }
 
     // Create new chart instance
-    chartInstance = new Chart(ctx, {
+    chartInstanceRef.current = new Chart(ctx,{
       type: "line",
       data: {
         labels: ["January", "February", "March", "April", "May", "June"],
@@ -61,8 +60,8 @@ const LineChart = () => {
 
     // Clean up on component unmount
     return () => {
-      if (chartInstance) {
-        chartInstance.destroy();
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy();
       }
     };
   }, []);

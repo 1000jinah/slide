@@ -4,14 +4,14 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 
 const VerticalBarChart = ({ labels, data, backgroundColors }) => {
   const chartRef = useRef(null);
-  let chartInstance = null;
+  const chartInstanceRef = useRef(null); // Store the chart instance
 
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
 
     // Destroy previous chart instance, if it exists
-    if (chartInstance) {
-      chartInstance.destroy();
+    if (chartInstanceRef.current) {
+      chartInstanceRef.current.destroy();
     }
 
     // Register datalabels plugin
@@ -21,7 +21,7 @@ const VerticalBarChart = ({ labels, data, backgroundColors }) => {
     const barWidth = 1.2 / data.length; // Adjust the bar width percentage
 
     // Create new chart instance
-    chartInstance = new Chart(ctx, {
+    chartInstanceRef.current = new Chart(ctx, {
       type: "bar",
       data: {
         labels: labels,
@@ -73,8 +73,8 @@ const VerticalBarChart = ({ labels, data, backgroundColors }) => {
 
     // Clean up on component unmount
     return () => {
-      if (chartInstance) {
-        chartInstance.destroy();
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy();
       }
     };
   }, [labels, data, backgroundColors]);

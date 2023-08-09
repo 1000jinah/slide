@@ -571,7 +571,7 @@ const MultiSelectInput = () => {
             onChange={(e) => handleInputChange(e, "financials")}
           />
         </Box>
-        <Box sx={{ marginRight: "10px" }}>
+        <Box sx={{ marginRight: "20px" }}>
           <Link to="/related">
             <Button
               variant="contained"

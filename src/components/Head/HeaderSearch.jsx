@@ -5,6 +5,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import PersonIcon from "@mui/icons-material/Person";
 import LogoIcon from "assets/logo.png";
 import HeaderSearchBar from "components/Head/HeaderSearchBar";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [age, setAge] = React.useState(10);
@@ -24,7 +25,10 @@ const Header = () => {
           padding: "15px 20px",
         }}
       >
-        <img src={LogoIcon} alt="Logo" />
+        <Link to="/">
+          <img src={LogoIcon} alt="Logo" />
+        </Link>
+
         <Box>
           <HeaderSearchBar />
         </Box>
