@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
-import ChartDataLabels from "chartjs-plugin-datalabels";
 
 const VerticalBarChart = ({ labels, data, backgroundColors }) => {
   const chartRef = useRef(null);
@@ -15,7 +14,6 @@ const VerticalBarChart = ({ labels, data, backgroundColors }) => {
     }
 
     // Register datalabels plugin
-    Chart.register(ChartDataLabels);
 
     // Calculate the bar width based on the number of datasets
     const barWidth = 1.2 / data.length; // Adjust the bar width percentage
