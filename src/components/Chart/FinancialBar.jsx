@@ -1,23 +1,17 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
-import ChartDataLabels from "chartjs-plugin-datalabels";
 
 const FinancialBar = () => {
   const chartRef = useRef(null);
-  const chartInstanceRef = useRef(null); // Store the chart instance
+  const chartInstanceRef = useRef(null);
 
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
 
-    // Destroy previous chart instance, if it exists
     if (chartInstanceRef.current) {
       chartInstanceRef.current.destroy();
     }
 
-    // Register datalabels plugin
-    Chart.register(ChartDataLabels);
-
-    // Create new chart instance
     chartInstanceRef.current = new Chart(ctx, {
       type: "bar",
       data: {
@@ -34,50 +28,42 @@ const FinancialBar = () => {
         scales: {
           x: {
             ticks: {
-              display: true, // Show the x-axis ticks
+              display: true,
               color: "#000000",
-              zeroLineColor: "transparent" // Remove the zero line color
+              zeroLineColor: "transparent"
             },
             grid: {
               display: true,
-              color: "transparent", // Remove the x-axis grid lines
-              borderColor: "transparent" // Remove the remaining x-axis line
+              color: "transparent",
+              borderColor: "transparent"
             },
-            zeroLineWidth: 0 // Remove the zero line
+            zeroLineWidth: 0
           },
           y: {
-            display: false, // Hide the y-axis
+            display: false,
             grid: {
-              display: false // Hide the y-axis grid lines
+              display: false
             }
           }
         },
         plugins: {
           tooltip: {
-            enabled: false // Disable tooltips
+            enabled: false
           },
           legend: {
-            display: false // Hide the legend
+            display: false
           },
-          datalabels: {
-            anchor: "end",
-            align: "center",
-            offset: 0,
-            color: "#000000",
-            formatter: (value) => value + "M" // Add the "M" text to the data value
-          }
         },
         elements: {
           bar: {
-            borderWidth: 0, // Remove the borders around the bars
-            borderRadius: 9 // Apply border radius to the bars
+            borderWidth: 0,
+            borderRadius: 9
           }
         },
-        maintainAspectRatio: false // Prevent chart resizing on hover
+        maintainAspectRatio: false
       }
     });
 
-    // Clean up on component unmount
     return () => {
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();

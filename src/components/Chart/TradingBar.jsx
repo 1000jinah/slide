@@ -1,23 +1,17 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
-import ChartDataLabels from "chartjs-plugin-datalabels";
 
 const BarChart = () => {
   const chartRef = useRef(null);
-  const chartInstanceRef = useRef(null); // Store the chart instance
+  const chartInstanceRef = useRef(null);
 
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
 
-    // Destroy previous chart instance, if it exists
     if (chartInstanceRef.current) {
       chartInstanceRef.current.destroy();
     }
 
-    // Register datalabels plugin
-    Chart.register(ChartDataLabels);
-
-    // Create new chart instance
     chartInstanceRef.current = new Chart(ctx, {
       type: "bar",
       data: {
@@ -41,20 +35,22 @@ const BarChart = () => {
           y: {
             beginAtZero: true,
             ticks: {
-              callback: (value) => value // Custom tick label format
+              callback: (value) => value
             }
           }
         },
         plugins: {
-          datalabels: {
-            display: false // Hide the labels inside the bars
-          }
+          tooltip: {
+            enabled: false
+          },
+          legend: {
+            display: false
+          },
         },
-        maintainAspectRatio: false // Prevent chart resizing on hover
+        maintainAspectRatio: false
       }
     });
 
-    // Clean up on component unmount
     return () => {
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();
