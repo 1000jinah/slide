@@ -3,7 +3,9 @@ import AddIcon from "@mui/icons-material/Add";
 import React from "react";
 import { Link } from "react-router-dom";
 import ViewButton from "components/ViewButton";
+import { ReactComponent as ArrowLeft } from "assets/img/btn_arrow_left_gray_small.svg";
 
+import { ReactComponent as ArrowRight } from "assets/img/btn_arrow_right_gray_small.svg";
 const PitchBox = () => {
   return (
     <Box
@@ -38,7 +40,16 @@ const PitchBox = () => {
             </Typography>
           </Box>
         </Link>
-        <IconButton aria-label="add">
+        <IconButton
+          aria-label="add"
+          sx={{
+            padding: "5px",
+            backgroundColor: "#e2e4e6",
+            ":hover": {
+              backgroundColor: "#e2e4e6",
+            },
+          }}
+        >
           <AddIcon />
         </IconButton>
       </Box>
@@ -50,17 +61,35 @@ const PitchBox = () => {
       {/* Pitch Slider */}
       <Box
         sx={{
+          position: "relative",
           background: "#e2e4e6",
           width: "100%",
           height: "150px",
           // position: "relative",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+
           mb: 1,
         }}
       >
-        <ViewButton />
+        <Box
+          sx={{
+            position: "absolute",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            top: "50%",
+            mt:"-14px",
+            width: "100%",
+            px: 2,
+          }}
+        >
+          <IconButton sx={{ backgroundColor: "#c8cacc" }}>
+            <ArrowLeft width={12} height={12} />
+          </IconButton>
+          <ViewButton />
+          <IconButton sx={{ backgroundColor: "#c8cacc" }}>
+            <ArrowRight width={12} height={12} />
+          </IconButton>
+        </Box>
       </Box>
       {/* Pitch Slider */}
       <Box>

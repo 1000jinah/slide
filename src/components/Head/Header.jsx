@@ -1,17 +1,19 @@
 import React from "react";
 import { Box, IconButton, FormControl, Select, MenuItem } from "@mui/material";
-import Notifications from "@mui/icons-material/Notifications";
-import SettingsIcon from "@mui/icons-material/Settings";
-import PersonIcon from "@mui/icons-material/Person";
-import LogoIcon from "assets/logo.png";
+import { ReactComponent as Notifications} from "assets/img/icon_notification_fill.svg";
+import { ReactComponent as SettingsIcon} from "assets/img/icon_setiing.svg";
+import { ReactComponent as PersonIcon} from "assets/img/icon_person.svg";
+import LogoIcon from "assets/img/logo.png";
 import { Link } from "react-router-dom";
 
-const Header = () => {
-  const [age, setAge] = React.useState(10);
+const Header = ({ initialValue }) => {
+  const [age, setAge] = React.useState(initialValue);
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    const selectedValue = event.target.value;
+    setAge(selectedValue);
   };
+
   return (
     <div>
       <div
@@ -45,19 +47,27 @@ const Header = () => {
               displayEmpty
               sx={{ color: "#636973" }}
               inputProps={{ "aria-label": "Without label" }}
-            >
-              <MenuItem value={10}>Investor</MenuItem>
-              <MenuItem value={20}>Company</MenuItem>
+            > 
+              <MenuItem value={10}>
+                <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Investor
+                </Link>
+              </MenuItem>
+
+              <MenuItem value={20}>
+                <Link to="/dashboard" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Company
+                </Link>
+              </MenuItem>
             </Select>
-            {/* <FormHelperText>Without label</FormHelperText> */}
           </FormControl>
-          <IconButton aria-label="notification">
+          <IconButton sx={{mx:1.2}} aria-label="notification">
             <Notifications />
           </IconButton>
-          <IconButton aria-label="settings">
+          <IconButton sx={{mx:1.2}} aria-label="settings">
             <SettingsIcon />
           </IconButton>
-          <IconButton aria-label="profile">
+          <IconButton sx={{mx:1.2}} aria-label="profile">
             <PersonIcon />
           </IconButton>
         </Box>

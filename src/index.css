@@ -66,6 +66,8 @@ li {
   width: 100% !important;
   height: 100% !important;
 }
+
+
 @media screen and (max-width: 1700px) {
   #main .canvas-container {
     width: calc(100vw - 300px) !important;

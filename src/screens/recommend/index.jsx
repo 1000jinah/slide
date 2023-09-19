@@ -11,7 +11,7 @@ import React from "react";
 const Recommend = () => {
   return (
     <div>
-      <Header />
+      <Header initialValue={10} />
       <Box
         sx={{
           width: "100%",

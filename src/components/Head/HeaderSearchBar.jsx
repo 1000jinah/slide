@@ -6,16 +6,10 @@ import {
   Box,
   Select,
   MenuItem,
-
-  // Accordion,
-  // AccordionSummary,
-  // AccordionDetails,
   Checkbox,
   FormControlLabel,
   Alert,
   TextField,
-  FormControl,
-  InputLabel,
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
 const HeaderSearchBar = () => {
@@ -403,9 +397,9 @@ const HeaderSearchBar = () => {
       setFundingRound(fundingRoundValue);
       setShowList(false);
     }
-  
+
     // Add other functionalities for different inputs if needed
-  
+
     // Clear selected input
     setSelectedInput(null);
   };
@@ -423,7 +417,7 @@ const HeaderSearchBar = () => {
     if (selectedInput === "financials") {
       setFinancials("Custom");
       console.log("Selected Financials:", updatedFinancialsData);
-      setShowList(false)
+      setShowList(false);
     }
   };
 
@@ -527,24 +521,24 @@ const HeaderSearchBar = () => {
           Funding Round
         </Typography>
         <input
-            placeholder={selectedInput === "fundingRound" ? "" : "All"}
-            style={{
-              width: "100%",
-              fontSize: "11px",
-              color: "#969899",
-              backgroundColor: "transparent",
-              border: "none",
-              outline: "none",
-            }}
-            type="text"
-            value={
-              getInputValue("fundingRound") !== "All" &&
-              getInputValue("fundingRound") !== ""
-                ? "Custom"
-                : getInputValue("fundingRound")
-            }
-            onChange={(e) => handleInputChange(e, "fundingRound")}
-          />
+          placeholder={selectedInput === "fundingRound" ? "" : "All"}
+          style={{
+            width: "100%",
+            fontSize: "11px",
+            color: "#969899",
+            backgroundColor: "transparent",
+            border: "none",
+            outline: "none",
+          }}
+          type="text"
+          value={
+            getInputValue("fundingRound") !== "All" &&
+            getInputValue("fundingRound") !== ""
+              ? "Custom"
+              : getInputValue("fundingRound")
+          }
+          onChange={(e) => handleInputChange(e, "fundingRound")}
+        />
       </Box>
       <Divider orientation="vertical" flexItem sx={{ my: 1 }} />
       <Box
@@ -583,6 +577,9 @@ const HeaderSearchBar = () => {
             py: 0.4,
             mr: 1,
             textTransform: "capitalize",
+            ":hover": {
+              backgroundColor: "#969899",
+            },
           }}
           onClick={handleSearch}
         >
@@ -841,20 +838,20 @@ const HeaderSearchBar = () => {
             }}
           >
             <FormControlLabel
-               sx={{ ".MuiFormControlLabel-label": { fontSize: 14 } }}
-               control={
-                 <Checkbox
-                   sx={{
-                     color: grey[800],
- 
-                     "&.Mui-checked": {
-                       color: grey[900],
-                     },
-                     ".MuiSvgIcon-root": {
-                       width: "0.7em",
-                       height: "0.7em",
-                     },
-                   }}
+              sx={{ ".MuiFormControlLabel-label": { fontSize: 14 } }}
+              control={
+                <Checkbox
+                  sx={{
+                    color: grey[800],
+
+                    "&.Mui-checked": {
+                      color: grey[900],
+                    },
+                    ".MuiSvgIcon-root": {
+                      width: "0.7em",
+                      height: "0.7em",
+                    },
+                  }}
                   checked={
                     isAllSelected ||
                     (selectedItems.length > 0 &&
@@ -870,22 +867,22 @@ const HeaderSearchBar = () => {
               label="Select All"
             />
             {investType.map((type) => (
-               <Box key={TypeError} ml={2.5}>
-               <FormControlLabel
-                 sx={{ ".MuiFormControlLabel-label": { fontSize: 14 } }}
-                 control={
-                   <Checkbox
-                     sx={{
-                       color: grey[800],
+              <Box key={TypeError} ml={2.5}>
+                <FormControlLabel
+                  sx={{ ".MuiFormControlLabel-label": { fontSize: 14 } }}
+                  control={
+                    <Checkbox
+                      sx={{
+                        color: grey[800],
 
-                       "&.Mui-checked": {
-                         color: grey[900],
-                       },
-                       ".MuiSvgIcon-root": {
-                         width: "0.7em",
-                         height: "0.7em",
-                       },
-                     }}
+                        "&.Mui-checked": {
+                          color: grey[900],
+                        },
+                        ".MuiSvgIcon-root": {
+                          width: "0.7em",
+                          height: "0.7em",
+                        },
+                      }}
                       checked={selectedItems.includes(type)}
                       onChange={handleCheckboxChange(type)}
                     />
@@ -896,7 +893,14 @@ const HeaderSearchBar = () => {
             ))}
             <Button
               variant="contained"
-              sx={{ marginTop: 2 }}
+              sx={{
+                marginTop: 2,
+                textTransform:"capitalize",
+                backgroundColor: "#969899",
+                ":hover": {
+                  backgroundColor: "#969899",
+                },
+              }}
               onClick={handleApplyFundingRound}
             >
               Apply Funding Round
@@ -962,7 +966,14 @@ const HeaderSearchBar = () => {
             ))}
             <Button
               variant="contained"
-              sx={{ marginTop: 2 }}
+              sx={{
+                marginTop: 2,
+                textTransform:"capitalize",
+                backgroundColor: "#969899",
+                ":hover": {
+                  backgroundColor: "#969899",
+                },
+              }}
               onClick={handleApplyFinancials}
             >
               Apply Financials

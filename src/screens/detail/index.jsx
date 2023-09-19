@@ -39,6 +39,7 @@ import FinanicalBox from "components/FinanicalBox";
 import ProfileBox from "components/ProfileBox";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import NewsBox from "components/NewsBox";
+import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import { Link } from "react-router-dom";
 const chartData = [
   {
@@ -159,7 +160,7 @@ const Detail = () => {
   };
   return (
     <div>
-      <Header />
+      <Header initialValue={10} />
       <Box
         sx={{
           width: "100%",
@@ -201,10 +202,17 @@ const Detail = () => {
               </Box>
             </Box>
             <Box>
-              <Link to="https://www.apple.com/"  target="_blank">
+              <Link to="https://www.apple.com/" target="_blank">
                 <Button
                   variant="contained"
-                  sx={{ textTransform: "capitalize", mr: 2 }}
+                  sx={{
+                    textTransform: "capitalize",
+                    mr: 2,
+                    backgroundColor: "#969899",
+                    ":hover": {
+                      backgroundColor: "#969899",
+                    },
+                  }}
                   startIcon={<MeetingRoomIcon />}
                 >
                   Visit Apple
@@ -212,7 +220,13 @@ const Detail = () => {
               </Link>
               <Button
                 variant="contained"
-                sx={{ textTransform: "capitalize" }}
+                sx={{
+                  textTransform: "capitalize",
+                  backgroundColor: "#969899",
+                  ":hover": {
+                    backgroundColor: "#969899",
+                  },
+                }}
                 startIcon={<AddIcon />}
               >
                 Add to Watchlist
@@ -231,40 +245,69 @@ const Detail = () => {
                 borderColor: "divider",
                 display: "flex",
                 justifyContent: "space-between",
+
+                "& .MuiTabs-indicator": {
+                  backgroundColor: "#636973",
+                },
               }}
             >
               <Tabs
                 value={tabValue}
                 onChange={handleTabChange}
                 aria-label="basic tabs example"
+                sx={{}}
               >
                 <Tab
-                  sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+                  sx={{
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
+                    "&.Mui-selected": { color: "#636973" },
+                  }}
                   label="Summary"
                   {...a11yProps(0)}
                 />
                 <Tab
-                  sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+                  sx={{
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
+                    "&.Mui-selected": { color: "#636973" },
+                  }}
                   label="Use Analysis"
                   {...a11yProps(1)}
                 />
                 <Tab
-                  sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+                  sx={{
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
+                    "&.Mui-selected": { color: "#636973" },
+                  }}
                   label="Financials"
                   {...a11yProps(2)}
                 />
                 <Tab
-                  sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+                  sx={{
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
+                    "&.Mui-selected": { color: "#636973" },
+                  }}
                   label="People"
                   {...a11yProps(3)}
                 />
                 <Tab
-                  sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+                  sx={{
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
+                    "&.Mui-selected": { color: "#636973" },
+                  }}
                   label="Signals & News"
                   {...a11yProps(4)}
                 />
                 <Tab
-                  sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+                  sx={{
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
+                    "&.Mui-selected": { color: "#636973" },
+                  }}
                   label="Similar Companies"
                   {...a11yProps(5)}
                 />
@@ -409,6 +452,11 @@ const Detail = () => {
                           fontWeight: "bold",
                           width: 300,
                           mr: 3,
+                          color: "#636973",
+                          backgroundColor: "#c8cacc",
+                          ":hover": {
+                            backgroundColor: "#c8cacc",
+                          },
                         }}
                       >
                         View
@@ -421,6 +469,11 @@ const Detail = () => {
                           fontSize: 16,
                           fontWeight: "bold",
                           width: 300,
+                          color: "#636973",
+                          backgroundColor: "#c8cacc",
+                          ":hover": {
+                            backgroundColor: "#c8cacc",
+                          },
                         }}
                       >
                         Download
@@ -695,6 +748,8 @@ const Detail = () => {
                         fontWeight: "bold",
                         width: "100%",
                         mr: 3,
+                        border: "0.5px solid #c8cacc",
+                        color: "#636973",
                       }}
                     >
                       Show all investors
@@ -713,8 +768,8 @@ const Detail = () => {
                       Compare
                     </Typography>
                     <Button
-                      endIcon={<AddIcon />}
-                      sx={{ textTransform: "capitalize", color: "#636973" }}
+                      sx={{ color: "#636973", textTransform: "capitalize" }}
+                      endIcon={<CompareArrowsIcon sx={{ color: "#636973" }} />}
                     >
                       Compare Details
                     </Button>
@@ -841,9 +896,9 @@ const Detail = () => {
                         {/* <FormHelperText>Without label</FormHelperText> */}
                       </FormControl>
                       <Button
+                        sx={{ color: "#636973", textTransform: "capitalize" }}
                         onClick={handleTrafficDetailCLick}
                         endIcon={<AddIcon />}
-                        sx={{ textTransform: "capitalize", color: "#636973" }}
                       >
                         Traffic Details
                       </Button>
@@ -1066,9 +1121,9 @@ const Detail = () => {
                       }}
                     >
                       <Button
+                        sx={{ color: "#636973", textTransform: "capitalize" }}
                         onClick={handleTrafficDetailCLick}
                         endIcon={<AddIcon />}
-                        sx={{ textTransform: "capitalize", color: "#636973" }}
                       >
                         Transaction Details
                       </Button>
@@ -1155,6 +1210,10 @@ const Detail = () => {
                               fontWeight: "bold",
                               whiteSpace: "nowrap",
                               textTransform: "none",
+                              ":hover": {
+                                backgroundColor: "#969899",
+                                color: "#fff",
+                              },
                             }}
                             startIcon={<AddIcon />}
                           >
@@ -1184,6 +1243,10 @@ const Detail = () => {
                               backgroundColor: "#e2e4e6",
                               color: "#636973",
                               textTransform: "none",
+                              ":hover": {
+                                backgroundColor: "#e2e4e6",
+                                color: "#636973",
+                              },
                             }}
                           >
                             Amazon and Alibaba Group share similar
@@ -1255,6 +1318,10 @@ const Detail = () => {
                               fontWeight: "bold",
                               whiteSpace: "nowrap",
                               textTransform: "none",
+                              ":hover": {
+                                backgroundColor: "#969899",
+                                color: "#fff",
+                              },
                             }}
                             startIcon={<AddIcon />}
                           >
@@ -1284,6 +1351,10 @@ const Detail = () => {
                               backgroundColor: "#e2e4e6",
                               color: "#636973",
                               textTransform: "none",
+                              ":hover": {
+                                backgroundColor: "#e2e4e6",
+                                color: "#636973",
+                              },
                             }}
                           >
                             Amazon and Alibaba Group share similar
@@ -1355,6 +1426,10 @@ const Detail = () => {
                               fontWeight: "bold",
                               whiteSpace: "nowrap",
                               textTransform: "none",
+                              ":hover": {
+                                backgroundColor: "#969899",
+                                color: "#fff",
+                              },
                             }}
                             startIcon={<AddIcon />}
                           >
@@ -1384,6 +1459,10 @@ const Detail = () => {
                               backgroundColor: "#e2e4e6",
                               color: "#636973",
                               textTransform: "none",
+                              ":hover": {
+                                backgroundColor: "#e2e4e6",
+                                color: "#636973",
+                              },
                             }}
                           >
                             Amazon and Alibaba Group share similar
@@ -1455,6 +1534,10 @@ const Detail = () => {
                               fontWeight: "bold",
                               whiteSpace: "nowrap",
                               textTransform: "none",
+                              ":hover": {
+                                backgroundColor: "#969899",
+                                color: "#fff",
+                              },
                             }}
                             startIcon={<AddIcon />}
                           >
@@ -1484,6 +1567,10 @@ const Detail = () => {
                               backgroundColor: "#e2e4e6",
                               color: "#636973",
                               textTransform: "none",
+                              ":hover": {
+                                backgroundColor: "#e2e4e6",
+                                color: "#636973",
+                              },
                             }}
                           >
                             Amazon and Alibaba Group share similar
@@ -1574,6 +1661,10 @@ const Detail = () => {
                                 px: 0,
                                 ml: 2,
                                 textTransform: "none",
+                                ":hover": {
+                                  backgroundColor: "#969899",
+                                  color: "#fff",
+                                },
                               }}
                             >
                               Add
@@ -1651,6 +1742,10 @@ const Detail = () => {
                                 px: 0,
                                 ml: 2,
                                 textTransform: "none",
+                                ":hover": {
+                                  backgroundColor: "#969899",
+                                  color: "#fff",
+                                },
                               }}
                             >
                               Add
@@ -1728,6 +1823,10 @@ const Detail = () => {
                                 px: 0,
                                 ml: 2,
                                 textTransform: "none",
+                                ":hover": {
+                                  backgroundColor: "#969899",
+                                  color: "#fff",
+                                },
                               }}
                             >
                               Add
@@ -1805,6 +1904,10 @@ const Detail = () => {
                                 px: 0,
                                 ml: 2,
                                 textTransform: "none",
+                                ":hover": {
+                                  backgroundColor: "#969899",
+                                  color: "#fff",
+                                },
                               }}
                             >
                               Add

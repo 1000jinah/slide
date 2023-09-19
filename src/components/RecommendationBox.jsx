@@ -1,5 +1,6 @@
-import { Box, Typography, Button, Divider } from "@mui/material";
+import { Box, Typography, Button, Divider, IconButton } from "@mui/material";
 import React from "react";
+import { ReactComponent as Exit } from "assets/img/btn_exit.svg";
 const RecommendationBox = () => {
   return (
     <Box
@@ -9,7 +10,16 @@ const RecommendationBox = () => {
         "&:last-child": { mr: 0 },
       }}
     >
-      <Box sx={{ display: "flex", alignItems: "center", px: 3, py: 2, pb: 0 }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          px: 3,
+          py: 2,
+          pb: 0,
+          position: "relative",
+        }}
+      >
         <Box sx={{ p: 3, backgroundColor: "#c8cacc" }}></Box>
         <Typography
           sx={{
@@ -21,6 +31,9 @@ const RecommendationBox = () => {
         >
           Kelly Wearstler
         </Typography>
+        <IconButton sx={{ position: "absolute", right: 12, top: 8 }}>
+          <Exit width={15} height={15} />
+        </IconButton>
       </Box>
       <Box sx={{ px: 3, py: 2 }}>
         <Typography sx={{ fontSize: "12px", color: "#636973" }}>
@@ -43,6 +56,10 @@ const RecommendationBox = () => {
             fontWeight: "bold",
             textTransform: "capitalize",
             p: 0,
+            ":hover": {
+              backgroundColor: "#c8cacc",
+              color: "#636973",
+            },
           }}
         >
           Add

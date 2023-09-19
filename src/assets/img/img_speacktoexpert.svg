@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="507" height="153" viewBox="0 0 507 153">
+    <defs>
+        <clipPath id="t6eo9o4fra">
+            <path data-name="사각형 19" transform="translate(-.467 -.467)" style="fill:#636973" d="M0 0h17v17H0z"/>
+        </clipPath>
+    </defs>
+    <rect data-name="사각형 23" width="507" height="153" rx="5" style="fill:#fd784c"/>
+    <path data-name="사각형 24" d="M5 0h416a5 5 0 0 1 5 5v130H0V5a5 5 0 0 1 5-5z" transform="translate(41 18)" style="fill:#f6f8fa"/>
+    <rect data-name="사각형 30" width="187" height="107" rx="5" transform="translate(60 32)" style="fill:#fe8f0d"/>
+    <g data-name="사각형 57" transform="translate(262 32)" style="stroke:#e2e4e6;fill:#fff">
+        <rect width="187" height="107" rx="5" style="stroke:none"/>
+        <rect x=".5" y=".5" width="186" height="106" rx="4.5" style="fill:none"/>
+    </g>
+    <g data-name="그룹 29" transform="translate(-166 -522)">
+        <circle data-name="타원 3" cx="14.5" cy="14.5" r="14.5" transform="translate(236 568)" style="fill:#fff"/>
+        <g data-name="그룹 28">
+            <g data-name="그룹 9" style="clip-path:url(#t6eo9o4fra)" transform="translate(242.467 574.467)">
+                <path data-name="패스 4" d="M8.068 8.068a4.034 4.034 0 1 0-4.034-4.034 4.033 4.033 0 0 0 4.034 4.034m0 2.017C5.375 10.085 0 11.437 0 14.119v1.009a1.011 1.011 0 0 0 1.009 1.009h14.119a1.011 1.011 0 0 0 1.009-1.009v-1.009c0-2.683-5.375-4.034-8.068-4.034" style="fill:#fd784c"/>
+            </g>
+        </g>
+    </g>
+    <text transform="translate(109 61)" style="font-family:AppleSDGothicNeoB00;font-size:14px;fill:#80592d"><tspan x="0" y="0">Caya</tspan></text>
+    <text data-name="General Call" transform="translate(321 56)" style="font-family:AppleSDGothicNeoR00;fill:#202225;font-size:14px"><tspan x="0" y="0">General Call</tspan></text>
+    <text data-name="$60" transform="translate(335 92)" style="font-size:24px;fill:#202225;font-family:AppleSDGothicNeoB00"><tspan x="0" y="0">$60</tspan></text>
+    <text data-name="/ 30min" transform="translate(333 123)" style="fill:#969899;font-family:AppleSDGothicNeoR00;font-size:14px"><tspan x="0" y="0">/ 30min</tspan></text>
+    <path data-name="사각형 58" transform="translate(109 70)" style="fill:#ffb259" d="M0 0h80v4H0z"/>
+    <path data-name="사각형 59" transform="translate(109 79)" style="fill:#ffb259" d="M0 0h125v4H0z"/>
+    <path data-name="사각형 60" transform="translate(70 94)" style="fill:#ffb259" d="M0 0h64v4H0z"/>
+    <path data-name="사각형 61" transform="translate(70 103)" style="fill:#ffb259" d="M0 0h164v4H0z"/>
+    <path data-name="사각형 62" transform="translate(70 112)" style="fill:#ffb259" d="M0 0h164v4H0z"/>
+    <path data-name="사각형 63" transform="translate(70 121)" style="fill:#ffb259" d="M0 0h119v4H0z"/>
+</svg>

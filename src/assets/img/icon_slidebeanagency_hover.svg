@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="36" viewBox="0 0 25 36">
+    <defs>
+        <clipPath id="uixaf5h75a">
+            <path data-name="사각형 10031" style="fill:#fd784c" d="M0 0h25v36H0z"/>
+        </clipPath>
+    </defs>
+    <path data-name="사각형 10021" transform="translate(12)" style="fill:#fd784c" d="M0 0h1v4H0z"/>
+    <path data-name="사각형 10022" transform="rotate(-30 6.6 -11.591)" style="fill:#fd784c" d="M0 0h1.2v3.6H0z"/>
+    <path data-name="사각형 10023" transform="rotate(-59.999 6.6 .408)" style="fill:#fd784c" d="M0 0h1.2v3.6H0z"/>
+    <path data-name="사각형 10024" transform="translate(2 10)" style="fill:#fd784c" d="M0 0h3v1H0z"/>
+    <path data-name="사각형 10025" transform="rotate(-30 30.732 2.342)" style="fill:#fd784c" d="M0 0h3.6v1.2H0z"/>
+    <path data-name="사각형 10026" transform="rotate(-59.999 22.189 -8.592)" style="fill:#fd784c" d="M0 0h1.2v3.6H0z"/>
+    <path data-name="사각형 10027" transform="translate(20 10)" style="fill:#fd784c" d="M0 0h3v1H0z"/>
+    <path data-name="사각형 10028" transform="rotate(-30.001 21.732 -31.246)" style="fill:#fd784c" d="M0 0h3.6v1.2H0z"/>
+    <path data-name="사각형 10029" transform="rotate(-59.999 11.533 -11.448)" style="fill:#fd784c" d="M0 0h3.6v1.2H0z"/>
+    <g data-name="그룹 28122">
+        <g data-name="그룹 28121" style="clip-path:url(#uixaf5h75a)">
+            <path data-name="패스 71" d="M18.6 22.4h-3v-2.257a1.859 1.859 0 0 1 .733-1.448 6 6 0 1 0-8.027-.509 5.872 5.872 0 0 0 .589.53 1.811 1.811 0 0 1 .7 1.425V22.4h-3A6.608 6.608 0 0 0 0 29v10.2h25.2V29a6.608 6.608 0 0 0-6.6-6.6m-8.965-4.628a4.8 4.8 0 1 1 5.951-.015 3.054 3.054 0 0 0-1.186 2.386v.457h-1.2v-4.8H12v4.8h-1.2v-.46a3.005 3.005 0 0 0-1.165-2.369M14.4 21.8v1.8a.6.6 0 0 1-.6.6h-2.4a.6.6 0 0 1-.6-.6v-1.8zm-.039 12.391L12.6 35.952l-1.761-1.761 1.076-6.991h1.37zM12 25.4h1.2v.6H12zM24 38h-3.6v-7.8h-1.2V38H6v-7.8H4.8V38H1.2v-9a5.407 5.407 0 0 1 5.4-5.4h3a1.8 1.8 0 0 0 1.2 1.69v1.265L9.561 34.61l3.039 3.039 3.039-3.039-1.239-8.055V25.29a1.8 1.8 0 0 0 1.2-1.69h3A5.407 5.407 0 0 1 24 29z" transform="translate(0 -3.2)" style="fill:#fd784c"/>
+            <path data-name="사각형 10030" transform="translate(12 10)" style="fill:#fd784c" d="M0 0h1v1H0z"/>
+        </g>
+    </g>
+</svg>

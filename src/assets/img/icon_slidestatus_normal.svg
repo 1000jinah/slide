@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="26" viewBox="0 0 27 26">
+    <defs>
+        <clipPath id="ztyn5xrhda">
+            <path data-name="사각형 10052" style="fill:#fff" d="M0 0h10.385v7.355H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="사각형 10050" style="stroke:#fde0d7;stroke-width:2px;stroke-dasharray:5;fill:#fff">
+        <rect width="21" height="21" rx="3" style="stroke:none"/>
+        <rect x="1" y="1" width="19" height="19" rx="2" style="fill:none"/>
+    </g>
+    <g data-name="그룹 28164">
+        <g data-name="사각형 10051" style="fill:#fde0d7;stroke:#fff">
+            <path style="stroke:none" d="M0 0h16v16H0z" transform="translate(11 10)"/>
+            <path style="fill:none" d="M.5.5h15v15H.5z" transform="translate(11 10)"/>
+        </g>
+        <g data-name="그룹 28160">
+            <g data-name="그룹 28159" transform="translate(14 14)" style="clip-path:url(#ztyn5xrhda)">
+                <path data-name="패스 93" d="M3.867 7.275.079 3.487a.268.268 0 0 1 0-.379l.757-.757a.267.267 0 0 1 .379 0l2.841 2.841L9.17.078a.269.269 0 0 1 .379 0l.757.757a.268.268 0 0 1 0 .379L4.245 7.275a.265.265 0 0 1-.378 0" style="fill-rule:evenodd;fill:#fff"/>
+            </g>
+        </g>
+    </g>
+</svg>

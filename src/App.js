@@ -4,7 +4,8 @@ import Related from "screens/related";
 import Recommend from "screens/recommend";
 import Detail from "screens/detail";
 import Editor from "screens/editor";
-
+import Dashboard from "screens/dashboard";
+import Presentation from "screens/presentation";
 function App() {
   return (
     <div className="app">
@@ -17,6 +18,8 @@ function App() {
           <Route path="/recommend" element={<Recommend />} />
           <Route path="/detail" element={<Detail />} />
           <Route path="/editor" element={<Editor />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/presentation" element={<Presentation />} />
         </Routes>
       </BrowserRouter>
     </div>

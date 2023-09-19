@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="38" viewBox="0 0 40 38">
+    <defs>
+        <clipPath id="fxdl3ocs2a">
+            <path data-name="사각형 10056" transform="translate(.005 .005)" style="fill:none" d="M0 0h10v10H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 28230">
+        <g style="stroke:#e2e4e6;fill:#fff">
+            <circle cx="19" cy="19" r="19" style="stroke:none"/>
+            <circle cx="19" cy="19" r="18.5" style="fill:none"/>
+        </g>
+        <path data-name="교차 1" d="M14.708 37a18.506 18.506 0 0 1-10.4-6.753c2.882-3.549 10.827-5.335 15.228-5.335 4.124 0 11.362 1.569 14.627 4.688A18.516 18.516 0 0 1 23.292 37zm-3.325-24.319a8.154 8.154 0 1 1 8.155 8.154 8.153 8.153 0 0 1-8.155-8.154z" transform="translate(-.238)" style="fill:#e2e4e6"/>
+    </g>
+    <g data-name="그룹 28231" transform="translate(-1701.771 -17)">
+        <circle data-name="shutterstock_2051476259" cx="7" cy="7" r="7" transform="translate(1727.771 41)" style="fill:#fff"/>
+        <g data-name="그룹 28184">
+            <g data-name="그룹 28182" transform="translate(1729.995 42.995)" style="clip-path:url(#fxdl3ocs2a)">
+                <path data-name="패스 98" d="M5.005 9.982a.622.622 0 0 1-.622-.622V5.629H.65a.622.622 0 0 1 0-1.245h3.733V.65a.622.622 0 0 1 1.245 0v3.733H9.36a.622.622 0 0 1 0 1.245H5.628V9.36a.622.622 0 0 1-.622.622"/>
+            </g>
+        </g>
+    </g>
+</svg>

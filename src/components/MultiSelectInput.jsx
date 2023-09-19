@@ -580,6 +580,11 @@ const MultiSelectInput = () => {
                 width: "160px",
 
                 textTransform: "capitalize",
+                ":hover"
+                :{
+                  backgroundColor: "#969899",
+                          
+                } 
               }}
               onClick={handleSearch}
             >

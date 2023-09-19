@@ -68,7 +68,7 @@ const Related = () => {
 
   return (
     <div>
-      <HeaderSearch />
+      <HeaderSearch initialValue={10} />
       <Box
         sx={{
           width: "100%",
@@ -127,29 +127,64 @@ const Related = () => {
                 value={tabValue}
                 onChange={handleTabChange}
                 aria-label="basic tabs example"
+                sx={{
+                  "& .MuiTabs-indicator":{
+                    backgroundColor:"#636973"
+                  }
+                }}
               >
                 <Tab
-                  sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+                  sx={{
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
+                    "&.Mui-selected": {
+                      color: "#636973",
+                    },
+                  }}
                   label="Company"
                   {...a11yProps(0)}
                 />
                 <Tab
-                  sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+                  sx={{
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
+                    "&.Mui-selected": {
+                      color: "#636973",
+                    },
+                  }}
                   label="Investors"
                   {...a11yProps(1)}
                 />
                 <Tab
-                  sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+                  sx={{
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
+                    "&.Mui-selected": {
+                      color: "#636973",
+                    },
+                  }}
                   label="Funding Rounds"
                   {...a11yProps(2)}
                 />
                 <Tab
-                  sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+                  sx={{
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
+                    "&.Mui-selected": {
+                      color: "#636973",
+                    },
+                  }}
                   label="People"
                   {...a11yProps(3)}
                 />
                 <Tab
-                  sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+                  sx={{
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
+                    "&.Mui-selected": {
+                      color: "#636973",
+                    },
+                  }}
                   label="Saved"
                   {...a11yProps(4)}
                 />

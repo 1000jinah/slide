@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="507" height="153" viewBox="0 0 507 153">
+    <defs>
+        <clipPath id="3tjzdacu9a">
+            <path style="fill:none" d="M0 21h181v15H0z"/>
+        </clipPath>
+        <clipPath id="dx1xtc3g9b">
+            <path style="fill:none" d="M0 0h181v33H0z"/>
+        </clipPath>
+        <clipPath id="tp9h080m8d">
+            <path data-name="사각형 31" style="fill:none" d="M0 0h53.673v53.671H0z"/>
+        </clipPath>
+        <filter id="lqwfkdrvzc" x="49.5" y="56.5" width="196" height="63" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feFlood flood-color="#e2e4e6"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <rect data-name="사각형 49" width="507" height="153" rx="5" style="fill:#127fb0"/>
+    <path data-name="사각형 51" d="M5 0h208v135H0V5a5 5 0 0 1 5-5z" transform="translate(41 18)" style="fill:#f6f8fa"/>
+    <path data-name="사각형 50" d="M0 0h208a5 5 0 0 1 5 5v130H0V0z" transform="translate(254 18)" style="fill:#0c597d"/>
+    <g data-name="스크롤 그룹 5" transform="translate(57 -2)" style="clip-path:url(#3tjzdacu9a);isolation:isolate">
+        <g data-name="사각형 52" style="stroke:#e2e4e6;fill:#fff">
+            <path d="M0 0h181v31a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5V0z" style="stroke:none"/>
+            <path d="M.5.5h180V31a4.5 4.5 0 0 1-4.5 4.5H5A4.5 4.5 0 0 1 .5 31V.5z" style="fill:none"/>
+        </g>
+    </g>
+    <g data-name="스크롤 그룹 6" transform="translate(57 120)" style="clip-path:url(#dx1xtc3g9b);isolation:isolate">
+        <g data-name="사각형 53" style="stroke:#e2e4e6;fill:#fff">
+            <path d="M5 0h171a5 5 0 0 1 5 5v31H0V5a5 5 0 0 1 5-5z" style="stroke:none"/>
+            <path d="M5 .5h171a4.5 4.5 0 0 1 4.5 4.5v30.5H.5V5A4.5 4.5 0 0 1 5 .5z" style="fill:none"/>
+        </g>
+    </g>
+    <g style="filter:url(#lqwfkdrvzc)">
+        <g data-name="사각형 54" transform="translate(57 64)" style="stroke:#e2e4e6;fill:#fff">
+            <rect width="181" height="48" rx="5" style="stroke:none"/>
+            <rect x=".5" y=".5" width="180" height="47" rx="4.5" style="fill:none"/>
+        </g>
+    </g>
+    <circle data-name="타원 2" cx="9.5" cy="9.5" r="9.5" transform="translate(57 41)" style="fill:#0c597d"/>
+    <text data-name="3" transform="translate(63 56)" style="font-family:AppleSDGothicNeoR00;font-size:14px;fill:#fff"><tspan x="0" y="0">3</tspan></text>
+    <text data-name="Market Analysis" transform="translate(81 55)" style="font-family:AppleSDGothicNeoB00;font-size:14px;fill:#0c597d"><tspan x="0" y="0">Market Analysis</tspan></text>
+    <text data-name="Company Name" transform="translate(67 82)" style="fill:#202225;font-size:12px;font-family:AppleSDGothicNeoR00"><tspan x="0" y="0">Company Name</tspan></text>
+    <path data-name="사각형 55" transform="translate(67 91)" style="fill:#e2e4e6" d="M0 0h146v4H0z"/>
+    <path data-name="사각형 56" transform="translate(67 100)" style="fill:#e2e4e6" d="M0 0h73v4H0z"/>
+    <g data-name="그룹 26">
+        <g data-name="그룹 18" style="clip-path:url(#tp9h080m8d)" transform="translate(402.827 86)">
+            <path data-name="패스 7" d="M104.283 27.055 88.528 5.37A25.682 25.682 0 0 1 104.283.251z" transform="translate(-77.446 -.22)" style="fill:#7d5f00"/>
+            <path data-name="패스 8" d="M104.283 27.055 88.528 5.37A25.682 25.682 0 0 1 104.283.251z" transform="translate(-77.446 -.22)" style="fill:none"/>
+            <path data-name="패스 9" d="M27.057 62.828 11.3 84.513a26.8 26.8 0 0 1-5.93-37.44 25.483 25.483 0 0 1 5.93-5.93z" transform="translate(-.219 -35.993)" style="fill:#7d3219"/>
+            <path data-name="패스 10" d="M27.057 62.828 11.3 84.513a26.8 26.8 0 0 1-5.93-37.44 25.483 25.483 0 0 1 5.93-5.93z" transform="translate(-.219 -35.993)" style="fill:none"/>
+            <path data-name="패스 11" d="M104.283 27.055V.251a26.8 26.8 0 1 1 0 53.608 25.682 25.682 0 0 1-15.755-5.119z" transform="translate(-77.446 -.22)" style="fill:#13237d"/>
+            <path data-name="패스 12" d="M104.283 27.055V.251a26.8 26.8 0 1 1 0 53.608 25.682 25.682 0 0 1-15.755-5.119z" transform="translate(-77.446 -.22)" style="fill:none"/>
+        </g>
+    </g>
+    <g data-name="그룹 27">
+        <path data-name="사각형 32" transform="translate(265 42.5)" style="fill:#3b7793" d="M0 0h146v8H0z"/>
+        <path data-name="사각형 33" transform="translate(265 57.5)" style="fill:#3b7793" d="M0 0h167v8H0z"/>
+        <path data-name="사각형 34" transform="translate(265 90.5)" style="fill:#3b7793" d="M0 0h43v8H0z"/>
+        <path data-name="사각형 35" transform="translate(265 105.5)" style="fill:#3b7793" d="M0 0h84v8H0z"/>
+        <path data-name="사각형 37" transform="translate(317 90.5)" style="fill:#3b7793" d="M0 0h49v8H0z"/>
+        <path data-name="사각형 36" transform="translate(265 120.5)" style="fill:#3b7793" d="M0 0h127v8H0z"/>
+    </g>
+</svg>

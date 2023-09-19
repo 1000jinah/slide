@@ -40,7 +40,7 @@ function SimpleDialog(props) {
   return (
     <Dialog onClose={handleClose} open={open} fullWidth maxWidth="lg">
       {/* About & PitchBook Slide (5:5) */}
-      <Box sx={{ display: "flex",borderBottom:"1px solid #e2e4e6" }}>
+      <Box sx={{ display: "flex", borderBottom: "1px solid #e2e4e6" }}>
         {/* PitchBook Slide */}
         <Box
           sx={{
@@ -136,17 +136,21 @@ function SimpleDialog(props) {
               </Box>
             </Box>
             {/* Company Details */}
-           <Link to="/detail">
-           <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "#969899",
-                width: "160px",
-                textTransform: "capitalize",
-              }}
-            >
-              Company Details
-            </Button></Link>
+            <Link to="/detail">
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "#969899",
+                  width: "160px",
+                  textTransform: "capitalize",
+                  ":hover": {
+                    backgroundColor: "#969899",
+                  },
+                }}
+              >
+                Company Details
+              </Button>
+            </Link>
           </Box>
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <Typography sx={{ color: "#636973", fontWeight: "bold" }}>
@@ -172,7 +176,9 @@ function SimpleDialog(props) {
               <AboutTable />
             </Box>
             <Box width={"50%"}>
-              <Typography sx={{ fontSize: "0.875rem", mb: 1.5,  fontWeight: "bold"  }}>
+              <Typography
+                sx={{ fontSize: "0.875rem", mb: 1.5, fontWeight: "bold" }}
+              >
                 Industries
               </Typography>
               <Stack direction="row" sx={{ flexWrap: "wrap" }}>
@@ -247,6 +253,10 @@ export default function ViewButton() {
           color: "#636973",
           textTransform: "capitalize",
           p: 0,
+
+          ":hover": {
+            backgroundColor: "#c8cacc",
+          },
         }}
       >
         View

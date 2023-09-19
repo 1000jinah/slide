@@ -5,6 +5,7 @@ import {
   TableRow,
   TableCell,
   Box,
+  Button,
 } from "@mui/material";
 import React from "react";
 function createData(index, name) {
@@ -57,7 +58,24 @@ const TopStartUps = () => {
                 ></Box>
                 {row.name}
               </TableCell>
-              <TableCell sx={{ p: 0 }}>Add</TableCell>
+              <TableCell sx={{ p: 0 }}>
+                <Button
+                  variant="contained"
+                  sx={{
+                    backgroundColor: "transparent",
+                  color:"#636973",
+                    fontWeight:"bold",
+                    textTransform: "capitalize",
+                    p: 0,
+                    ":hover": {
+                      backgroundColor: "transparent",
+                      color:"#636973",
+                    },
+                  }}
+                >
+                  Add
+                </Button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

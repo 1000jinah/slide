@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26.327" height="26.922" viewBox="0 0 26.327 26.922">
+    <defs>
+        <clipPath id="vheflwcfxa">
+            <path data-name="사각형 93" style="fill:#fd784c" d="M0 0h26.327v26.922H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 38">
+        <g data-name="그룹 37" style="clip-path:url(#vheflwcfxa)">
+            <path data-name="패스 32" d="M12.653 25.307a12.653 12.653 0 1 1 12.652-12.654 12.668 12.668 0 0 1-12.652 12.654m0-23.358a10.7 10.7 0 1 0 10.7 10.7 10.716 10.716 0 0 0-10.7-10.7" style="fill:#fd784c"/>
+            <path data-name="패스 33" d="M20.793 22.222a.97.97 0 0 1-.687-.285l-4.58-4.565a.975.975 0 1 1 1.374-1.381l4.578 4.567a.974.974 0 0 1-.687 1.664" transform="translate(4.559 4.7)" style="fill:#fd784c"/>
+        </g>
+    </g>
+    <g data-name="그룹 40" transform="translate(-1308.173 -1028.039)">
+        <circle data-name="타원 8" cx="2" cy="2" r="2" transform="translate(1313 1039)" style="fill:#fd784c"/>
+        <circle data-name="타원 9" cx="2" cy="2" r="2" transform="translate(1319 1039)" style="fill:#fd784c"/>
+        <circle data-name="타원 10" cx="2" cy="2" r="2" transform="translate(1325 1039)" style="fill:#fd784c"/>
+    </g>
+</svg>
