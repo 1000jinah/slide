@@ -177,6 +177,7 @@ const Dashboard = () => {
             <Link
          
               style={{
+                color: "#969899",
                 textDecoration: "none",
               }}
               to="/presentation"
@@ -189,7 +190,7 @@ const Dashboard = () => {
                   display: "flex",
                   alignItems: "center",
                   backgroundColor: "transparent",
-                  color: "#969899",
+                  opacity:1,
                   justifyContent: "start",
                   minHeight: "auto",
                   borderRadius: 3,

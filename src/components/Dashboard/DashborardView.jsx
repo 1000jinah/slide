@@ -1,13 +1,32 @@
-import { Box, Typography, Button, Grid } from "@mui/material";
+import { Box, Typography, Button, Grid, IconButton } from "@mui/material";
 import React, { useState } from "react";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import DashboardTitleBox from "./DashboardTitleBox";
 // import Slider from "react-slick";
 const DashboardView = () => {
   const views = [
     // Each presentation object with its properties
 
+    {
+      name: "Caya",
+      job: "Co-Founder & CEO at Slidebean",
+      descript:
+        "Happy to review your pitch deck, hare my thoughts on your fundraising plans, or give you insights on your go-to-market strategy.",
+      price: "$399",
+      minute: "Per 30 minutes",
+      bookCall: "Book A Call",
+    },
+    {
+      name: "Caya",
+      job: "Co-Founder & CEO at Slidebean",
+      descript:
+        "Happy to review your pitch deck, hare my thoughts on your fundraising plans, or give you insights on your go-to-market strategy.",
+      price: "$399",
+      minute: "Per 30 minutes",
+      bookCall: "Book A Call",
+    },
     {
       name: "Caya",
       job: "Co-Founder & CEO at Slidebean",
@@ -114,6 +133,14 @@ const DashboardView = () => {
     setIsDragging(false); // Reset dragging state to false
     setDragStartX(0); // Reset the drag start position
   };
+  const handleFirstItemMoveClick = () => {
+    // Calculate the maximum translate based on the width of presentations
+    const maxTranslate = (views.length - views.length) * 280;
+
+    // Set the current translate to the maximum value to move to the first presentation
+    setDragPosition(maxTranslate);
+  };
+
   return (
     <Box sx={{ mt: 3 }}>
       <Box sx={{ px: 8 }}>
@@ -129,31 +156,36 @@ const DashboardView = () => {
                 px: 2,
                 py: 3,
                 border: "1px solid #e2e4e6",
-                overflowX: "clip",
+                overflowX: "hidden",
               }}
             >
-              <Box sx={{ position: "relative", height: 396 }}>
+              <Box sx={{ height: 396 }}>
                 <Box
                   sx={{
                     height: "100%",
                     display: "flex",
-                    position: "absolute",
-                    transform: `translateX(${dragPosition}px)`, // Apply the drag position as a transform
+                    overflowY: "clip",
+                    overflowX: "hidden",
+                    cursor: isDragging ? "grabbing" : "grab",
+                    
                   }}
                   onMouseDown={handleDragStart}
                   onMouseMove={handleDragMove}
                   onMouseUp={handleDragEnd}
                   onMouseLeave={handleDragEnd}
                 >
-                  {views.map((view) => (
+                  {views.map((view, index) => (
                     <Box
                       sx={{
-                        width: 280,
+                        flex: "0 0 280px", // Fixed width
                         backgroundColor: "#dcdee0",
+                        position: "relative",
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "space-between",
                         height: "100%",
+                        transition: isDragging ? "none" : "transform 0.3s ease-in-out",
+                        transform: `translateX(${dragPosition}px)`, // Apply the drag position as a transform
                         borderRadius: 2,
                         p: 2,
                         mr: 3,
@@ -199,13 +231,13 @@ const DashboardView = () => {
                             color: "#636973",
                             fontSize: 18,
                             fontWeight: "bold",
-                            mb: 0.5
+                            mb: 0.5,
                           }}
                         >
                           {view.price}
                         </Typography>
                         <Typography
-                          sx={{ color: "#969899", fontSize: 14, mb: 1}}
+                          sx={{ color: "#969899", fontSize: 14, mb: 1 }}
                         >
                           {view.minute}
                         </Typography>
@@ -221,6 +253,24 @@ const DashboardView = () => {
                         >
                           {view.bookCall}
                         </Button>
+                        {index === views.length - 1 && (
+                          <Box
+                            sx={{
+                              display: "block",
+                              position: "absolute",
+                              top: "50%",
+                              marginTop: -3,
+                              right: -100,
+                            }}
+                          >
+                            <IconButton
+                              sx={{ backgroundColor: "#f3f5f7" }}
+                              onClick={handleFirstItemMoveClick}
+                            >
+                              <ArrowBackIcon />
+                            </IconButton>
+                          </Box>
+                        )}
                       </Box>
                     </Box>
                   ))}

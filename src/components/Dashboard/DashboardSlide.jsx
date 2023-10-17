@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Box, IconButton, Button, Typography } from "@mui/material";
 import { ZoomIn as ZoomInIcon } from "@mui/icons-material";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import AddIcon from "@mui/icons-material/Add";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import DashboardTitleBox from "components/Dashboard/DashboardTitleBox";
 const PresentationSlide = () => {
   const presentations = [
-    // Each presentation object with its properties
-
     {
       name: "Apple Inc. Pitch Deck",
       views: "104 Views",
@@ -61,18 +60,41 @@ const PresentationSlide = () => {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const slideRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [currentTranslate, setCurrentTranslate] = useState(0);
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? presentations.length - 1 : prevIndex - 1
-    );
+  const handleMouseDown = (e) => {
+    if (slideRef.current) {
+      setIsDragging(true);
+      setStartX(e.pageX - slideRef.current.offsetLeft - currentTranslate);
+    }
   };
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === presentations.length - 1 ? 0 : prevIndex + 1
-    );
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+
+    const x = e.pageX - slideRef.current.offsetLeft;
+    const translate = x - startX;
+
+    // Calculate the maximum translate based on the width of presentations
+    const maxTranslate = (presentations.length - 1) * 270 * -1;
+
+    // Ensure translate remains within bounds
+    setCurrentTranslate(Math.max(maxTranslate, Math.min(0, translate)));
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+  const handleFirstItemMoveClick = () => {
+    // Calculate the maximum translate based on the width of presentations
+    const maxTranslate = (presentations.length - presentations.length) * 270;
+
+    // Set the current translate to the maximum value to move to the first presentation
+    setCurrentTranslate(maxTranslate);
   };
 
   return (
@@ -103,18 +125,31 @@ const PresentationSlide = () => {
             </Typography>
           </Box>
         </Box>
-        <Box sx={{ display: "flex", overflowX: "hidden" }}>
+        <Box
+          ref={slideRef}
+          sx={{
+            display: "flex",
+
+            overflowX: "hidden",
+            cursor: isDragging ? "grabbing" : "grab",
+            userSelect: "none",
+          }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+        >
           {presentations.map((presentation, index) => (
             <Box
               key={index}
               sx={{
                 flex: "0 0 270px", // Fixed width
                 border: "0.5px solid #e2e4e6",
-                mr: 3,
+                mr: 4.5,
                 p: 1,
                 position: "relative",
-                transition: "transform 0.3s ease-in-out",
-                transform: `translateX(-${currentIndex * 270}px)`, // Slide transition
+                transform: `translateX(${currentTranslate}px)`,
+                transition: isDragging ? "none" : "transform 0.3s ease-in-out",
               }}
             >
               <Typography
@@ -177,7 +212,7 @@ const PresentationSlide = () => {
                   }}
                 >
                   <NavigateBeforeIcon
-                    onClick={handlePrev}
+                    // onClick={handlePrev}
                     sx={{
                       color: "#c8cacc",
                       fontSize: 25,
@@ -199,7 +234,7 @@ const PresentationSlide = () => {
                     Edit
                   </Button>
                   <NavigateNextIcon
-                    onClick={handleNext}
+                    // onClick={handleNext}
                     sx={{
                       color: "#c8cacc",
                       fontSize: 25,
@@ -210,6 +245,24 @@ const PresentationSlide = () => {
                   />
                 </Box>
               </Box>
+              {index === presentations.length - 1 && (
+                <Box
+                  sx={{
+                    display: "block",
+                    position: "absolute",
+                    top: "50%",
+                    marginTop: -3,
+                    right: -100,
+                  }}
+                >
+                  <IconButton
+                    sx={{ backgroundColor: "#f3f5f7" }}
+                    onClick={handleFirstItemMoveClick}
+                  >
+                    <ArrowBackIcon />
+                  </IconButton>
+                </Box>
+              )}
             </Box>
           ))}
         </Box>

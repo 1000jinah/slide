@@ -374,7 +374,7 @@ const Presentation = () => {
                   height: "100%",
                   display: slide.active ? "block" : "none",
                 }}
-              ></Box>
+              >{slide.index}</Box>
             ))}
 
             <Box
